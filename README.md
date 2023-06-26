@@ -44,3 +44,7 @@ mkdir -p ~/.oh-my-zsh/completions
 curl -L https://raw.githubusercontent.com/ahmetb/kubectx/master/completion/kubectx.zsh -o ~/.oh-my-zsh/completions/_kubectx.zsh
 curl -L https://raw.githubusercontent.com/ahmetb/kubectx/master/completion/kubens.zsh -o ~/.oh-my-zsh/completions/_kubens.zsh
 ```
+
+## Further setup
+
+Please also see [Michael's setup](https://github.com/michaeljoy/osx-setup/tree/master)
