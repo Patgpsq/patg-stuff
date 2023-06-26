@@ -9,7 +9,8 @@ This is a repo that Patrick uses to add documentation and other things to make l
 3. Run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 4. Run `brew update`
 5. Run `brew install github terraform helm kubectl fzf`
-6. Run
+6. Run `echo 'export PATH=$PATH:/opt/homebrew/bin >> ~/.zshrc'` 
+7. Run
 ```
 (
   set -x; cd "$(mktemp -d)" &&
@@ -21,13 +22,14 @@ This is a repo that Patrick uses to add documentation and other things to make l
   ./"${KREW}" install krew
 )
 ```
-7. Run `kubectl krew install ns` 
-8. Run 
+8. Run `echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.zshrc`
+9. Run `kubectl krew install ns` 
+10. Run 
 ```
 mkdir -p ~/.oh-my-zsh/custom/plugins/kubectl-autocomplete/
 kubectl completion zsh > ~/.oh-my-zsh/custom/plugins/kubectl-autocomplete/kubectl-autocomplete.plugin.zsh
 ```
-9. Run
+11. Run
 ```
 curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
 curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
