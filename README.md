@@ -4,13 +4,16 @@ This is a repo that Patrick uses to add documentation and other things to make l
 
 ## Dev Box (Laptop setup) for Mac OS
 
-1. Run `sudo xcode-select --install`
-2. Run `sudo /usr/sbin/softwareupdate --install-rosetta --agree-to-license`
-3. Run `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-4. Run `brew update`
-5. Run `brew install github terraform helm kubectl fzf`
-6. Run `echo 'export PATH=$PATH:/opt/homebrew/bin >> ~/.zshrc'` 
-7. Run
+1. Install xcode.
+`sudo xcode-select --install`
+2. Install Rosetta2
+`sudo /usr/sbin/softwareupdate --install-rosetta --agree-to-license`
+3. Install Homebrew
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+4. `brew update`
+5. Install various packages you need for DevOps work `brew install github terraform helm kubectl fzf`
+6. Set homebrew path `echo 'export PATH=$PATH:/opt/homebrew/bin >> ~/.zshrc'` and `. ~/.zshrc`
+7. Install kubectl krew plugin manager
 ```
 (
   set -x; cd "$(mktemp -d)" &&
@@ -22,14 +25,14 @@ This is a repo that Patrick uses to add documentation and other things to make l
   ./"${KREW}" install krew
 )
 ```
-8. Run `echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.zshrc`
-9. Run `kubectl krew install ns` 
-10. Run 
+8. Add krew path to Zsh rc file `echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.zshrc` and `. ~/.zshrc`
+9. Install kubectl ns plugin Run `kubectl krew install ns` 
+10. Set up kubectl command completion 
 ```
 mkdir -p ~/.oh-my-zsh/custom/plugins/kubectl-autocomplete/
 kubectl completion zsh > ~/.oh-my-zsh/custom/plugins/kubectl-autocomplete/kubectl-autocomplete.plugin.zsh
 ```
-11. Run
+11. Setup kubectl ns command completion 
 ```
 curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
 curl -LO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubens
